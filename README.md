@@ -39,7 +39,7 @@ git clone https://github.com/Honney9/todo-ai-feedback-app.git
 cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install httpx fastapi python-dotenv
+pip install -r requirements.txt
 
 # Create .env file with:
 OPENAI_API_KEY=your_key
