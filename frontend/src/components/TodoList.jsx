@@ -7,7 +7,8 @@ export default function TodoList() {
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState('');
 
-  const API_URL = 'http://localhost:5000/api/todos';
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const API_URL = `${API_BASE_URL}/api/todos`;
 
   const fetchTodos = async () => {
     try {

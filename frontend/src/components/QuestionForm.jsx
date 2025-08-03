@@ -5,12 +5,15 @@ export default function QuestionForm() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const QUESTION_URL = `${API_BASE_URL}/api/ask`;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!question.trim()) return;
     setAnswer('Thinking...'); // optional loading text
     try {
-      const res = await axios.post('http://localhost:5000/api/ask', { question });
+      const res = await axios.post(`${QUESTION_URL}`, { question });
       console.log('Response from backend:', res.data);
       if (res.data.answer) {
         setAnswer(res.data.answer);
