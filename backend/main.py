@@ -8,7 +8,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",  # Vite dev server
+        "http://localhost:5173",
+        "https://todo-ai-feedback-app.vercel.app"  # Vite dev server
     ],
     allow_credentials=True,
     allow_methods=["*"],
